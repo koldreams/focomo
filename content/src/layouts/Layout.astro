@@ -1,0 +1,140 @@
+---
+import { getImage } from 'astro:assets';
+import focomoLogo from '../images/focomo-logo.png';
+
+const optimizedLogo = await getImage({
+  src: focomoLogo,
+  width: 128,
+  height: 128,
+  quality: 96,
+  format: 'webp',
+});
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Get help with Focomo, the revolutionary 3D tomato timer app for iOS. Learn about 3D interactions, focus sessions, and productivity features." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/png" href={optimizedLogo.src} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- App-specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Focomo" />
+    <meta name="theme-color" content="#FF6B47" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={optimizedLogo.src} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={optimizedLogo.src} />
+    
+    <title>{title}</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Focomo",
+        "description": "Revolutionary 3D tomato timer for deep focus sessions",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "iOS",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://apps.apple.com/app/focomo",
+          "priceCurrency": "USD",
+          "price": "4.99"
+        }
+      }
+    </script>
+  </head>
+  
+  <body class="font-sans text-rendering-optimized bg-white text-gray-900 min-h-screen flex flex-col m-0">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur-custom">
+      <nav class="container-custom py-4">
+        <div class="flex items-center justify-between">
+          <!-- Brand -->
+          <div class="nav-brand">
+            <a href="/" class="nav-brand">
+              <img src={optimizedLogo.src} alt="Focomo" class="w-16 h-16 mr-3" />
+              <span>Focomo</span>
+            </a>
+          </div>
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center space-x-8">
+            <!-- Clean navigation - no redundant links -->
+          </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="lg:hidden hidden border-t border-gray-200 mt-4 pt-4" id="mobile-menu">
+          <div class="flex flex-col space-y-4">
+            <!-- No redundant download buttons - main CTA is in hero -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="flex-1 py-8 lg:py-12">
+      <div class="container-custom">
+        <slot />
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container-custom">
+        <div class="text-center mb-8">
+          <h3 class="footer-heading">Focomo</h3>
+          <p class="text-gray-300 text-sm mb-4">Revolutionary 3D Focus Timer for iOS</p>
+          <p class="text-gray-400 text-sm">Version 1.0.0 • iOS 18.0+</p>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <p class="text-gray-400 text-sm mb-2">&copy; 2025 Koldreams. All rights reserved.</p>
+          <p class="text-tomato-400 text-sm italic">Transform your focus with interactive 3D productivity.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
