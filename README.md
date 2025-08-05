@@ -4,7 +4,7 @@ Get help with Focomo, the revolutionary 3D tomato timer for iOS.
 
 ## 🍅 About Focomo
 
-Focomo transforms focus sessions into an immersive 3D experience. Watch your virtual tomato ripen in real-time as you work, creating a beautiful visual connection to your productivity that keeps you motivated and engaged.
+Focomo is a privacy-first 3D tomato timer for iOS. Watch your virtual tomato ripen in real-time as you work, with all data staying securely on your device. No accounts, no tracking, no data collection - just a beautiful, focused productivity experience.
 
 ## 🆘 Need Help?
 
@@ -22,29 +22,28 @@ Focomo transforms focus sessions into an immersive 3D experience. Watch your vir
 
 **First Time?**
 1. Tap the 3D tomato to start timer selection
-2. Drag the time scale to choose your focus duration
-3. Tap anywhere to confirm and begin your session
+2. Drag the time scale to choose your focus duration (5 min to 2 hours)
+3. Tap to confirm and begin your session
 4. Watch your tomato ripen as you work!
 
 **For Best Experience:**
 - Use good lighting for optimal 3D visuals
 - Keep your device charged (3D graphics use more battery)
 - Close other apps for smooth performance
-- Hold steady during animations
 
 ## 📱 Device Requirements
 
 - **iOS 18.0+** required
-- **iPhone 14** or newer recommended
-- **iPhone 16 Pro** for ultra-quality 3D experience
+- **iPhone XS** or newer recommended
+- Works on all modern iPhones with RealityKit support
 
 ## 🌟 Features
 
 - **3D Tomato Timer** - Watch your tomato ripen in real-time
 - **Immersive Experience** - RealityKit-powered 3D graphics
 - **Focus Mode Integration** - Automatic Do Not Disturb activation
-- **Progress Tracking** - Beautiful productivity analytics
-- **Achievement System** - Build long-term focus habits
+- **Local Progress Tracking** - View your focus history on-device
+- **Privacy First** - No data collection, all information stays local
 
 ---
 
