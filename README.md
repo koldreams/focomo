@@ -49,4 +49,4 @@ Focomo is a privacy-first 3D tomato timer for iOS. Watch your virtual tomato rip
 
 **Transform your focus with interactive 3D productivity!** 🍅✨
 
-[Download on the App Store](https://apps.apple.com/app/focomo) • [Visit Support Site](https://koldreams.com/focomo)
+[Download on the App Store](https://apps.apple.com/app/focomo/id6749549238?platform=iphone) • [Visit Support Site](https://koldreams.com/focomo)
